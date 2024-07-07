@@ -53,7 +53,7 @@ jobs:
 
     - name: Set color
       id: color-selector
-      run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      run: echo "SELECTED_COLOR=green" >> "$GITHUB_ENV"
     - name: Get color
       env:
         SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
@@ -70,4 +70,4 @@ jobs:
         tags:  |
           ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:latest
           ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:${{ steps.date.outputs.today }}
-          ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:${SELECTED_COLOR}
+          ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:${{SELECTED_COLOR}}
