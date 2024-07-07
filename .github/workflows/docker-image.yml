@@ -28,6 +28,6 @@ jobs:
       run: 
         export tag=$(date +%s)   &&
         echo $tag   &&
-        docker build . --file Dockerfile --tag downbydocker:tag  &&
+        docker build . --file Dockerfile --tag downbydocker:$tag  &&
         docker tag downbydocker:$tag ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:$tag  &&
         docker push ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:$tag
