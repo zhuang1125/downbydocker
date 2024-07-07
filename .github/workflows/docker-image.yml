@@ -18,13 +18,13 @@ jobs:
       name: Login to GitHub Container Registry
       uses: docker/login-action@v3
       with:
-        registry: ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}
-        username: ${{ secrets.ALI_DOCKER_HUB_USN }}
-        password: ${{ secrets.ALI_DOCKER_HUB_PWD }} 
+        registry: ${{secrets.ALI_DOCKER_HUB_REGISTRY}}
+        username: ${{secrets.ALI_DOCKER_HUB_USN}}
+        password: ${{secrets.ALI_DOCKER_HUB_PWD}} 
     - name: Build the Docker image
       run: 
         export tag=$(date +%s)   &&
-        echo ${{ secrets.ALI_DOCKER_HUB_USN }}   &&
+        echo ${{secrets.ALI_DOCKER_HUB_USN}}   &&
         docker build . --file Dockerfile --tag downbydocker:tag  &&
-        docker tag downbydocker:tag ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}/zhuang/downbydocker:tag  &&
-        docker push ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}/zhuang/downbydocker:tag
+        docker tag downbydocker:tag ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:tag  &&
+        docker push ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:tag
