@@ -9,8 +9,7 @@ RUN apt-get update \
     && apt-get install -y git \
     && apt-get install -y nginx \
     && apt-get install -y redis-server \
-    && apt-get install -y python2.7 \
-    && apt-get install -y python3.7 \
+    && apt-get install -y python3 \
     && apt-get install -y python3-pip \
     && apt-get install -y python-pip python-dev build-essential \
     && apt-get install -y mysql-server \
