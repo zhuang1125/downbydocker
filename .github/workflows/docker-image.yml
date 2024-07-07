@@ -20,5 +20,5 @@ jobs:
         echo ${{ secrets.ALI_DOCKER_HUB_USN }} 
         docker build . --file Dockerfile --tag downbydocker:tag
         docker login -u ${{ secrets.ALI_DOCKER_HUB_USN }} -p ${{ secrets.ALI_DOCKER_HUB_PWD }} ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}
-        docker tag locale ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}/zhuang/downbydocker:tag
+        docker tag downbydocker:tag ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}/zhuang/downbydocker:tag
         docker push ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}/zhuang/downbydocker:tag
