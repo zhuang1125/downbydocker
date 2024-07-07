@@ -10,5 +10,5 @@ RUN apt-get update \
    # && apt-get install -y python3 \
    # && apt-get install -y python3-pip  \
    # && apt install -y mysql-client
-   && apt install -y wget curl
+   && apt install -y wget curl telnet
 # RUN mkdir /data && cd /data && wget https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe -O DockerDesktopInstaller.exe
