@@ -53,6 +53,8 @@ jobs:
 
     - name: Build and push
       uses: docker/build-push-action@v6
+      env:
+          BUILD_TIME: ${{ steps.date.outputs.BUILD_TIME }}
       with:
         context: .
         push: true
