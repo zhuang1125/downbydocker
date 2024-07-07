@@ -60,5 +60,4 @@ jobs:
         push: true
         tags:  |
           ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:latest
-          ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:$BUILD_TIME
-          # ${{ steps.date.outputs.today }}
+          ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/downbydocker:${{ steps.date.outputs.BUILD_TIME }}
