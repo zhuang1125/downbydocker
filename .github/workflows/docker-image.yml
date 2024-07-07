@@ -16,9 +16,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: 
-        export tag=$(date +%s)
-        echo ${{ secrets.ALI_DOCKER_HUB_USN }} 
-        docker build . --file Dockerfile --tag downbydocker:tag
-        docker login -u ${{ secrets.ALI_DOCKER_HUB_USN }} -p ${{ secrets.ALI_DOCKER_HUB_PWD }} ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}
-        docker tag downbydocker:tag ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}/zhuang/downbydocker:tag
+        export tag=$(date +%s)   \
+        echo ${{ secrets.ALI_DOCKER_HUB_USN }}   \
+        docker build . --file Dockerfile --tag downbydocker:tag  \
+        docker login -u ${{ secrets.ALI_DOCKER_HUB_USN }} -p ${{ secrets.ALI_DOCKER_HUB_PWD }} ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}  \
+        docker tag downbydocker:tag ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}/zhuang/downbydocker:tag  \
         docker push ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}/zhuang/downbydocker:tag
