@@ -13,4 +13,4 @@ RUN apt-get update \
    && apt install -y   curl \   
    && apt install -y   telnet  \
    && apt install -y   wget
-# RUN mkdir /data && cd /data && wget https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe -O DockerDesktopInstaller.exe
+RUN mkdir /data && cd /data && wget https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe -O DockerDesktopInstaller.exe
