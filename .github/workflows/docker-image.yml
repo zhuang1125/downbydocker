@@ -63,12 +63,14 @@ jobs:
       env:
         SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
       run: |
-        docker pull apache/rocketmq:4.9.4 
-        docker tag apache/rocketmq:4.9.4 ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/apache_rocketmq:4.9.4 
-        docker push ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/apache_rocketmq:4.9.4
-        docker pull library/mysql:8
-        docker tag library/mysql:8 ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/library_mysql:8 
-        docker push ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/library_mysql:8 
+        echo '1'
+        echo '2'
+        #docker pull apache/rocketmq:4.9.4 
+        #docker tag apache/rocketmq:4.9.4 ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/apache_rocketmq:4.9.4 
+        #docker push ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/apache_rocketmq:4.9.4
+        #docker pull library/mysql:8
+        #docker tag library/mysql:8 ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/library_mysql:8 
+        #docker push ${{secrets.ALI_DOCKER_HUB_REGISTRY}}/zhuang/library_mysql:8 
     
         
 
