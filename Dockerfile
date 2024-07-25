@@ -10,9 +10,8 @@ RUN wget https://dlcdn.apache.org/seatunnel/${SEATUNNEL_VERSION}/apache-seatunne
 RUN tar -xzvf apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz
 RUN mv apache-seatunnel-${SEATUNNEL_VERSION} ${SEATUNNEL_HOME}
 RUN mkdir -p $SEATUNNEL_HOME/logs
-RUN cd ${SEATUNNEL_HOME} || sh bin/install-plugin.sh ${SEATUNNEL_VERSION}
+RUN cd ${SEATUNNEL_HOME} && ls -l -h -a && bin/install-plugin.sh ${SEATUNNEL_VERSION}
 
 RUN wget https://dlcdn.apache.org/seatunnel/seatunnel-web/${SEATUNNEL_WEB_VERSION}/apache-seatunnel-web-${SEATUNNEL_WEB_VERSION}-bin.tar.gz
 RUN tar -xzvf apache-seatunnel-web-${SEATUNNEL_WEB_VERSION}-bin.tar.gz
 RUN mv apache-seatunnel-web-${SEATUNNEL_WEB_VERSION}-bin ${SEATUNNEL_WEB_HOME}
-RUN cd ${SEATUNNEL_HOME} && ls -l -h -a && sh bin/install-plugin.sh ${SEATUNNEL_VERSION}
