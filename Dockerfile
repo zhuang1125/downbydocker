@@ -11,4 +11,7 @@ RUN git clone https://github.com/mono/libgdiplus.git \
 && cd libgdiplus \
 && ./autogen.sh --with-pango --prefix=/usr \
 && make \
-&& make install \
+&& make install 
+
+RUN apt-get update && apt-get install -y ttf-mscorefonts-installer
+RUN fc-cache -f -v
