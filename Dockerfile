@@ -13,5 +13,5 @@ RUN git clone https://github.com/mono/libgdiplus.git \
 && make \
 && make install 
 
-RUN apt-get update && apt-get install -y ttf-mscorefonts-installer
+RUN apt-get update && apt-get install -y tahoma-fonts
 RUN fc-cache -f -v
